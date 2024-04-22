@@ -8,17 +8,21 @@ public class MoveLever : MonoBehaviour
 	private float distance;
 	public float interDist = 2f;
 	public KeyCode myKey = KeyCode.X;
-	private Animation lever;
-	void OnMouseOver()
+	private Animator anim;
+	void Update()
 	{
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
 		if (distance < interDist)
 		{
 			if (Input.GetKeyDown(myKey))
 			{
-				lever = GetComponent<Animation>();
-				lever.enabled = true;
+			anim = GetComponent<Animator>();
+			anim.enabled = true;
 			}
 		}
+	}
+	void OnMouseOver()
+	{
+		
 	}
 }

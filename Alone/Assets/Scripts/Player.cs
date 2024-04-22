@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		Vector2 targetVelocity = new Vector2(HorizontalMove * 10f, rb.velocity.y);
+		Vector2 targetVelocity = new Vector2(HorizontalMove * 5f, rb.velocity.y);
         rb.velocity = targetVelocity;
 
         CheckGround();
