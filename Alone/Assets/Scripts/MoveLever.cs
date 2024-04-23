@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveLever : MonoBehaviour
 {
+	public GameObject TV;
 	public GameObject Player;
 	private float distance;
 	public float interDist = 2f;
@@ -16,8 +17,10 @@ public class MoveLever : MonoBehaviour
 		{
 			if (Input.GetKeyDown(myKey))
 			{
-			anim = GetComponent<Animator>();
-			anim.enabled = true;
+				anim = GetComponent<Animator>();
+				anim.enabled = true;
+				TV.AddComponent<Rigidbody2D>();
+				//TV.GetComponent<Rigidbody2D>().isKinematic = true;
 			}
 		}
 	}
