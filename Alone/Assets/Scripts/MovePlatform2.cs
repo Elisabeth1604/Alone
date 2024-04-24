@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class MovePlatform2 : MonoBehaviour
 {
+	public GameObject platf;
+	private Animator anim;
+
 	public Transform pos1, pos2;
 	public float speed = 1f;
 	public Transform startPos;
@@ -16,6 +19,14 @@ public class MovePlatform2 : MonoBehaviour
 		nextPos = startPos.position;
 	}
 	void Update()
+	{
+		anim = platf.GetComponent<Animator>();
+		if (anim.enabled == true)
+		{
+			Movement();
+		}
+	}
+	void Movement()
 	{
 		transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
 		if (transform.position == pos1.position)

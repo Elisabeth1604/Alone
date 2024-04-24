@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [Space]
     [Header("Ground Checker Settings")]
     public bool isGrounded = false;
-    [Range(-10f, 10f)] public float checkGroundOffsetY = -1.8f;
+    [Range(-5f, 5f)] public float checkGroundOffsetY = -1.8f;
 	[Range(0, 5f)] public float checkGroundRadius = 0.3f;
 
 	void Start()
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		Vector2 targetVelocity = new Vector2(HorizontalMove * 5f, rb.velocity.y);
+		Vector2 targetVelocity = new Vector2(HorizontalMove * 6f, rb.velocity.y);
         rb.velocity = targetVelocity;
 
         CheckGround();
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y + checkGroundOffsetY), checkGroundRadius);
 
-        if (colliders.Length > 1)
+        if (colliders.Length > 2)// 2 из-за того,что есть большой Box Collider, если уберём, поменять на 1!!!!!!!!!!!!!
         {
             isGrounded = true;
         }
@@ -73,4 +73,18 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
     }
+	private void OnCollisionEnter2D(Collision2D collision)// движение вместе с платформой
+	{
+		if(collision.gameObject.name.Equals("move_platform"))
+        {
+            this.transform.parent=collision.transform;
+        }
+	}
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.name.Equals("move_platform"))
+		{
+			this.transform.parent = null;
+		}
+	}
 }

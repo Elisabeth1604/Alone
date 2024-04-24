@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TV_down_platf: MonoBehaviour
+public class TV2_down_platf2 : MonoBehaviour
 {
 	public GameObject TV;
 	private Animator anim;
@@ -12,9 +12,9 @@ public class TV_down_platf: MonoBehaviour
 	{
 		distance = Vector3.Distance(TV.GetComponent<Transform>().position, transform.position);
 		if (distance < interDist)
-		{			
-				anim = GetComponent<Animator>();
-				anim.enabled = true;
+		{
+			anim = GetComponent<Animator>();
+			anim.enabled = true;
 		}
-    }
+	}
 }

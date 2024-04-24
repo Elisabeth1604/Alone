@@ -20,7 +20,6 @@ public class MoveLever : MonoBehaviour
 				anim = GetComponent<Animator>();
 				anim.enabled = true;
 				TV.AddComponent<Rigidbody2D>();
-				//TV.GetComponent<Rigidbody2D>().isKinematic = true;
 			}
 		}
 	}

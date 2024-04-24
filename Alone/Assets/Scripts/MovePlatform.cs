@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MovePlatform : MonoBehaviour
 {
-	public GameObject TV;
 	public GameObject platf;
 	private Animator anim;
 
