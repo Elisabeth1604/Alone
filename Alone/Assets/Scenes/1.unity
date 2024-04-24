@@ -2051,6 +2051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d29fa989325964488753a057e6d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 2113622403}
+  platf: {fileID: 1200270785}
   pos1: {fileID: 597495670}
   pos2: {fileID: 369828319}
   speed: 1
