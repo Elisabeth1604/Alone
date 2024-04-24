@@ -375,7 +375,7 @@ Transform:
   m_GameObject: {fileID: 107498765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.88, y: 7.43, z: 0.095233336}
+  m_LocalPosition: {x: -2.62, y: 7.43, z: 0.095233336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3341,6 +3341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d537db027079f141b7ab94621b35454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TV: {fileID: 2113622403}
   Player: {fileID: 629945976}
   interDist: 5
   myKey: 120
@@ -3386,8 +3387,6 @@ GameObject:
   - component: {fileID: 2113622404}
   - component: {fileID: 2113622406}
   - component: {fileID: 2113622405}
-  - component: {fileID: 2113622407}
-  - component: {fileID: 2113622408}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -3404,7 +3403,7 @@ Transform:
   m_GameObject: {fileID: 2113622403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.78, y: 5.24, z: 0.09}
+  m_LocalPosition: {x: -2.49, y: 5.24, z: 0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3439,7 +3438,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.1275861}
@@ -3507,40 +3506,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2113622407
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113622403}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f9d2b292d432e3489d2f39e087ee2e5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2113622408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113622403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 980816c35b59f9645b006fae7cac4ebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 629945976}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
