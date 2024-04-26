@@ -7,6 +7,7 @@ public class ParallaxBackground : MonoBehaviour
     public ParallaxCamera parallaxCamera;
     List <ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
+    public float speed;
     void Start()
     {
         if (parallaxCamera == null)
@@ -18,7 +19,8 @@ public class ParallaxBackground : MonoBehaviour
         SetLayers();
     }
 
-    void SetLayers()
+	
+	void SetLayers()
     {
         parallaxLayers.Clear();
 
@@ -34,11 +36,12 @@ public class ParallaxBackground : MonoBehaviour
         }
     }
 
-    void Move(float delta)
+   void Move(float delta)
     {
         foreach (ParallaxLayer layer in parallaxLayers)
         {
             layer.Move(delta);
         }
     }
+
 }
