@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y + checkGroundOffsetY), checkGroundRadius);
 
-        if (colliders.Length > 3)// 2 из-за того,что есть большой Box Collider, если уберём, поменять на 1!!!!!!!!!!!!!
+        if (colliders.Length > 3)// !!!!!!!!!!!!!
         {
             isGrounded = true;
         }

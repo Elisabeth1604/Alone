@@ -21,6 +21,7 @@ public class MoveLever : MonoBehaviour
 				anim.enabled = true;
 				TV.AddComponent<Rigidbody2D>();
 				TV.GetComponent<Rigidbody2D>().mass = 25;
+				TV.GetComponent<Rigidbody2D>().gravityScale = 4;
 			}
 		}
 	}
