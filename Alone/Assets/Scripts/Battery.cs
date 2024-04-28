@@ -24,10 +24,17 @@ public class Battery : MonoBehaviour
 				anim = GetComponent<Animator>();
 				anim.PlayInFixedTime("battery_move", 1, 0.0f);
 				battery.GetComponent<BoxCollider2D>().enabled = false;
-				anim.Play("battery_get");
-				panel.GetComponent<SpriteRenderer>().sprite = newSprite;
+				//anim.Play("battery_get");
+				//panel.GetComponent<SpriteRenderer>().sprite = newSprite;
+				StartCoroutine(waiter());
 			}
 		}
+	}
+	IEnumerator waiter()
+	{
+		anim.Play("battery_get");
+		yield return new WaitForSeconds((float)1.9);
+		panel.GetComponent<SpriteRenderer>().sprite = newSprite;
 	}
 }
 		
