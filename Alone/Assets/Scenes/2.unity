@@ -9573,7 +9573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d29fa989325964488753a057e6d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platf: {fileID: 0}
+  platf: {fileID: 1064932704}
   pos1: {fileID: 469239918}
   pos2: {fileID: 434944465}
   speed: 2
