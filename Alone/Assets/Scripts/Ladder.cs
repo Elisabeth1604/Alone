@@ -6,46 +6,45 @@ public class Ladder : MonoBehaviour
 {
 	public GameObject Player;
 	public GameObject ladder;
-	private float distance;
-	public float interDist = 2f;
 	public KeyCode myKey;
-	public Transform pos1, pos2;
-	public float speed = 1f;
-	public Transform startPos;
-	Vector3 nextPos;
-	public Sprite newSprite;
-	void Start()
+	private bool isMoving = false;
+	private float targetY;
+	private Rigidbody2D rb;
+	//public Sprite newSprite;
+	public float climbSpeed = 5f;
+
+	private bool isClimbing = false;
+
+	void OnTriggerStay2D(Collider2D other)
 	{
-		nextPos = startPos.position;
-	}
-	void Update()
-    {
-		distance = Vector3.Distance(Player.GetComponent<Transform>().position, ladder.GetComponent<Transform>().position);
-		if (distance < interDist)
+		Player.GetComponent<Rigidbody2D>().WakeUp();
+		if (other.gameObject.CompareTag("Player"))
 		{
-			if (Input.GetKeyDown(myKey))
+			float verticalInput = Input.GetAxis("Vertical");
+
+			if (verticalInput != 0)
 			{
-				
-				Movement();
-				//ladder.GetComponent<BoxCollider2D>().enabled = false;
+				Player.GetComponent<Rigidbody2D>().WakeUp();
+				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, verticalInput * climbSpeed);
+				other.GetComponent<Rigidbody2D>().gravityScale = 0;
+				isClimbing = true;
+			}
+			else
+			{
+				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
+				other.GetComponent<Rigidbody2D>().gravityScale = 1;
+				isClimbing = false;
 			}
 		}
 	}
-	void Movement()
+
+	void OnTriggerExit2D(Collider2D other)
 	{
-		//pos1.position = Player.GetComponent<Transform>().position;
-		transform.position = Vector3.MoveTowards(Player.transform.position, nextPos, speed * Time.deltaTime);
-		if (Player.transform.position == pos1.position)
+		if (other.gameObject.CompareTag("Player"))
 		{
-			nextPos = pos2.position;
-		}
-		if (Player.transform.position == pos2.position)
-		{
-			nextPos = pos1.position;
+			other.GetComponent<Rigidbody2D>().gravityScale = 1;
+			isClimbing = false;
 		}
 	}
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawLine(pos1.position, pos2.position);
-	}
+	
 }
