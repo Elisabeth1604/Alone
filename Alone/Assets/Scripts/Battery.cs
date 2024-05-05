@@ -16,8 +16,14 @@ public class Battery : MonoBehaviour
 	public float interDist = 2f;
 	public KeyCode myKey = KeyCode.X;
 	private Animator anim;
+	private Animator anim1;
 	public Sprite newSprite;
-
+	public string lname;
+	
+	private void Start()
+	{
+		lname = SceneManager.GetActiveScene().name;
+	}
 	void Update()
 	{
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
@@ -26,8 +32,14 @@ public class Battery : MonoBehaviour
 			if (Input.GetKeyDown(myKey))
 			{
 				anim = GetComponent<Animator>();
-				anim.PlayInFixedTime("battery_move", 1, 0.0f);
-				battery.GetComponent<BoxCollider2D>().enabled = false;
+				if(lname=="1")
+					anim.PlayInFixedTime("battery_move", 1, 0.0f);
+                else
+                {
+                    if(lname=="2")
+						anim.PlayInFixedTime("2battery_move", 1, 0.0f);
+				}
+                battery.GetComponent<BoxCollider2D>().enabled = false;
 				StartCoroutine(waiter());
 				
 			}
@@ -35,10 +47,25 @@ public class Battery : MonoBehaviour
 	}
 	IEnumerator waiter()
 	{
-		anim.Play("battery_get");
+		if (lname == "1")
+			anim.Play("battery_get");
+		else
+		{
+			if (lname == "2")
+				anim.Play("2battery_get");
+		}
 		yield return new WaitForSeconds((float)1.9);
 		panel.GetComponent<SpriteRenderer>().sprite = newSprite;
-		FideIn.GetComponent<Animator>	().enabled = true;
+		anim1 =FideIn.GetComponent<Animator>();
+		if (lname == "1")
+		{
+			anim1.Play("fade_in");
+		}
+		else
+		{
+			if (lname == "2")
+				anim1.Play("fade_in2");
+		}
 	}
 	
 }

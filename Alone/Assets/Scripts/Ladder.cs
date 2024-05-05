@@ -6,7 +6,7 @@ public class Ladder : MonoBehaviour
 {
 	public GameObject Player;
 	public GameObject ladder;
-	public KeyCode myKey;
+	public GameObject platf;
 	private bool isMoving = false;
 	private float targetY;
 	private Rigidbody2D rb;
@@ -28,12 +28,14 @@ public class Ladder : MonoBehaviour
 				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, verticalInput * climbSpeed);
 				other.GetComponent<Rigidbody2D>().gravityScale = 0;
 				isClimbing = true;
+				platf.GetComponent<BoxCollider2D>().enabled = false;
 			}
 			else
 			{
 				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
 				other.GetComponent<Rigidbody2D>().gravityScale = 1;
 				isClimbing = false;
+				platf.GetComponent<BoxCollider2D>().enabled = true;
 			}
 		}
 	}
@@ -44,6 +46,7 @@ public class Ladder : MonoBehaviour
 		{
 			other.GetComponent<Rigidbody2D>().gravityScale = 1;
 			isClimbing = false;
+			platf.GetComponent<BoxCollider2D>().enabled = true;
 		}
 	}
 	
