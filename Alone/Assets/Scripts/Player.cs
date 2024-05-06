@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y + checkGroundOffsetY), checkGroundRadius);
 
-        if (colliders.Length > 3)// !!!!!!!!!!!!!
+        if (colliders.Length >= 3)// !!!!!!!!!!!!!
         {
             isGrounded = true;
         }
