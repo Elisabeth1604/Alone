@@ -24,7 +24,6 @@ public class Ladder : MonoBehaviour
 
 			if (verticalInput != 0)
 			{
-				Player.GetComponent<Rigidbody2D>().WakeUp();
 				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, verticalInput * climbSpeed);
 				other.GetComponent<Rigidbody2D>().gravityScale = 0;
 				isClimbing = true;
@@ -33,7 +32,7 @@ public class Ladder : MonoBehaviour
 			else
 			{
 				other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
-				other.GetComponent<Rigidbody2D>().gravityScale = 1;
+				other.GetComponent<Rigidbody2D>().gravityScale = 2;
 				isClimbing = false;
 				platf.GetComponent<BoxCollider2D>().enabled = true;
 			}
@@ -44,7 +43,7 @@ public class Ladder : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
-			other.GetComponent<Rigidbody2D>().gravityScale = 1;
+			other.GetComponent<Rigidbody2D>().gravityScale = 2;
 			isClimbing = false;
 			platf.GetComponent<BoxCollider2D>().enabled = true;
 		}

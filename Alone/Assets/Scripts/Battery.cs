@@ -32,14 +32,19 @@ public class Battery : MonoBehaviour
 			if (Input.GetKeyDown(myKey))
 			{
 				anim = GetComponent<Animator>();
-				if(lname=="1")
-					anim.PlayInFixedTime("battery_move", 1, 0.0f);
-                else
-                {
-                    if(lname=="2")
-						anim.PlayInFixedTime("2battery_move", 1, 0.0f);
-				}
-                battery.GetComponent<BoxCollider2D>().enabled = false;
+				//if(lname=="1")
+				//	anim.PlayInFixedTime("battery_move", 1, 0.0f);
+    //            else
+    //            {
+    //                if(lname=="2")
+				//		anim.PlayInFixedTime("2battery_move", 1, 0.0f);
+				//	else
+				//	{
+				//		if (lname == "2")
+				//			anim.PlayInFixedTime("3battery_move", 1, 0.0f);
+				//	}
+				//}
+				battery.GetComponent<BoxCollider2D>().enabled = false;
 				StartCoroutine(waiter());
 				
 			}
@@ -53,6 +58,10 @@ public class Battery : MonoBehaviour
 		{
 			if (lname == "2")
 				anim.Play("2battery_get");
+			else
+			{   if(lname == "3")
+					anim.Play("3battery_get");
+			}
 		}
 		yield return new WaitForSeconds((float)1.9);
 		panel.GetComponent<SpriteRenderer>().sprite = newSprite;
