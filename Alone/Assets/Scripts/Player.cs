@@ -83,6 +83,14 @@ public class Player : MonoBehaviour
 		{
 			this.transform.parent = collision.transform;
 		}
+		if (collision.gameObject.name.Equals("move_platform2"))
+		{
+			this.transform.parent = collision.transform;
+		}
+		if (collision.gameObject.name.Equals("move_platf2"))
+		{
+			this.transform.parent = collision.transform;
+		}
 	}
 	private void OnCollisionExit2D(Collision2D collision)
 	{
@@ -91,6 +99,14 @@ public class Player : MonoBehaviour
 			this.transform.parent = null;
 		}
 		if (collision.gameObject.name.Equals("platf_move"))
+		{
+			this.transform.parent = null;
+		}
+		if (collision.gameObject.name.Equals("move_platform2"))
+		{
+			this.transform.parent = null;
+		}
+		if (collision.gameObject.name.Equals("move_platf2"))
 		{
 			this.transform.parent = null;
 		}
