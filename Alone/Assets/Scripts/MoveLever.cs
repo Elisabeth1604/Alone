@@ -10,6 +10,13 @@ public class MoveLever : MonoBehaviour
 	public float interDist = 2f;
 	public KeyCode myKey = KeyCode.X;
 	private Animator anim;
+	private AudioSource leverAudio;
+
+	void Start()
+	{
+		leverAudio = GetComponent<AudioSource>();
+	}
+
 	void Update()
 	{
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
@@ -22,8 +29,13 @@ public class MoveLever : MonoBehaviour
 				TV.AddComponent<Rigidbody2D>();
 				TV.GetComponent<Rigidbody2D>().mass = 25;
 				TV.GetComponent<Rigidbody2D>().gravityScale = 4;
+
+				if (leverAudio != null && !leverAudio.isPlaying)
+				{
+					leverAudio.Play();
+				}
 			}
 		}
 	}
-	
 }
+
