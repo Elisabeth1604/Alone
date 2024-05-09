@@ -19,10 +19,14 @@ public class Battery : MonoBehaviour
 	private Animator anim1;
 	public Sprite newSprite;
 	public string lname;
-	
+	public AudioSource audioSource; 
+	public AudioClip batterySound; 
+
+
 	private void Start()
 	{
 		lname = SceneManager.GetActiveScene().name;
+		audioSource = GetComponent<AudioSource>();
 	}
 	void Update()
 	{
@@ -63,6 +67,7 @@ public class Battery : MonoBehaviour
 					anim.Play("3battery_get");
 			}
 		}
+		audioSource.PlayOneShot(batterySound);
 		yield return new WaitForSeconds((float)1.9);
 		panel.GetComponent<SpriteRenderer>().sprite = newSprite;
 		anim1 =FideIn.GetComponent<Animator>();

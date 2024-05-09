@@ -12,7 +12,12 @@ public class Lever_platf_3 : MonoBehaviour
 	public KeyCode myKey = KeyCode.X;
 	private Animator anim;
 	private Animator anim1;
+	private AudioSource leverAudio;
 
+	void Start()
+	{
+		leverAudio = GetComponent<AudioSource>();
+	}
 	void Update()
     {
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
@@ -22,9 +27,14 @@ public class Lever_platf_3 : MonoBehaviour
 			{
 				anim1 = lever.GetComponent<Animator>();
 				anim1.enabled = true;
-				anim =platf.GetComponent<Animator>();
+				anim = platf.GetComponent<Animator>();
 				anim.enabled = true;
 				platf.GetComponent<BoxCollider2D>().isTrigger = false;
+
+				if (leverAudio != null && !leverAudio.isPlaying)
+				{
+					leverAudio.Play();
+				}
 			}
 		}
 	}
