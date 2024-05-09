@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
+
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -13,11 +14,16 @@ public class Player : MonoBehaviour
     [Range(0f, 10f)] public float speed = 1f;
 	[Range(0f, 15f)] public float jumpForce = 8f;
 
-    [Space]
+    [Header("PLayer Animation Settings")]
+	public Animator animator;
+
+	[Space]
     [Header("Ground Checker Settings")]
     public bool isGrounded = false;
     [Range(-5f, 5f)] public float checkGroundOffsetY = -1.8f;
 	[Range(0, 5f)] public float checkGroundRadius = 0.3f;
+
+
 
 	void Start()
     {
@@ -26,6 +32,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -33,6 +40,16 @@ public class Player : MonoBehaviour
 
         HorizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
+        animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
+
+        if (isGrounded == false)
+        {
+            animator.SetBool("Jumping", true);
+        }
+        else
+        {
+			animator.SetBool("Jumping", false);
+		}
         if (HorizontalMove < 0 && FacingRight)
         {
             Flip();

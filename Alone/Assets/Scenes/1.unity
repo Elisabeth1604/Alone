@@ -2289,7 +2289,7 @@ Transform:
   m_GameObject: {fileID: 582348736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.38, y: -0.8100004, z: -10}
+  m_LocalPosition: {x: -22.572, y: -0.7410002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2406,7 +2406,7 @@ SpriteRenderer:
   m_SortingLayerID: -1603199617
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 850062425, guid: 41f9fbc9cbf81e44d9d13762ee6b60d8, type: 3}
+  m_Sprite: {fileID: 1538839091, guid: a867936667271ca4695fff8647f0bc8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2426,7 +2426,7 @@ Transform:
   m_GameObject: {fileID: 629945976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.38, y: -7.05, z: 0}
+  m_LocalPosition: {x: -22.572, y: -6.981, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2473,6 +2473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   jumpForce: 15
+  animator: {fileID: 629945985}
   isGrounded: 0
   checkGroundOffsetY: -1.3
   checkGroundRadius: 0.3
@@ -2508,8 +2509,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015789669, y: -0.21091239}
-  m_Size: {x: 0.9067294, y: 1.5455265}
+  m_Offset: {x: 0.015789669, y: -0.279885}
+  m_Size: {x: 0.9067294, y: 1.5372951}
   m_Direction: 0
 --- !u!95 &629945985
 Animator:
@@ -4275,7 +4276,7 @@ Transform:
   m_GameObject: {fileID: 1169002332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8138676, y: -0.7698393, z: -10}
+  m_LocalPosition: {x: -6.814047, y: -0.7003441, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
