@@ -1016,8 +1016,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278387459
-  m_fontColor: {r: 0.01132071, g: 0.010829434, b: 0.010829434, a: 1}
+    rgba: 197379
+  m_fontColor: {r: 0.01132071, g: 0.010829434, b: 0.010829434, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1310,6 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07583a491d5f77848869951d0cac06fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promp: {fileID: 1734690363}
   Player: {fileID: 1792665549}
   platf: {fileID: 1159442279}
   lever: {fileID: 448958917}
@@ -1676,6 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6c1a78b1c785642b272a805441f743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  New_Sprite: {fileID: 1258077553, guid: 41f9fbc9cbf81e44d9d13762ee6b60d8, type: 3}
   Player: {fileID: 1792665549}
   ladder: {fileID: 529640463}
   platf: {fileID: 1939004170}
@@ -4479,6 +4481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e94c383c133424c94dc4d4a3b2f407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flag: 0
+  lever: {fileID: 448958917}
+  lever1: {fileID: 2076201832}
+  promp: {fileID: 1734690363}
   Player: {fileID: 1792665549}
   battery: {fileID: 1179411429}
   panel: {fileID: 1860683551}
@@ -4898,7 +4904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.392}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6716,6 +6722,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1734690364}
   - component: {fileID: 1734690365}
+  - component: {fileID: 1734690367}
+  - component: {fileID: 1734690366}
   m_Layer: 6
   m_Name: X
   m_TagString: Untagged
@@ -6781,7 +6789,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -91907545, guid: 0e8da34ea4ce86646aa86e8e5c464f84, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6791,6 +6799,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1734690366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734690363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543db1300db5e3449989062c2081e09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battery1: {fileID: 1179411429}
+  X: {fileID: 1734690363}
+  lever: {fileID: 448958917}
+  lever1: {fileID: 2076201832}
+  lname: 3
+--- !u!95 &1734690367
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734690363}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f66027e3d547b534f99b935f437358a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1735897350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,6 +6961,7 @@ GameObject:
   - component: {fileID: 1792665552}
   - component: {fileID: 1792665551}
   - component: {fileID: 1792665550}
+  - component: {fileID: 1792665556}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -7083,6 +7130,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1792665556
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792665549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cbc37fb592c72049ac9cf72db2f35cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1827559643
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,6 +8954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07583a491d5f77848869951d0cac06fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promp: {fileID: 1734690363}
   Player: {fileID: 1792665549}
   platf: {fileID: 1827559643}
   lever: {fileID: 2076201832}

@@ -44,7 +44,7 @@ public class MoveLever : MonoBehaviour
 				{
 					leverAudio.Play();
 				}
-				promp.GetComponent<Animator>().enabled = false;
+				//promp.GetComponent<Animator>().enabled = false;
 			}
 		}
 	}
