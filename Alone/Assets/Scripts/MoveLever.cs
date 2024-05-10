@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveLever : MonoBehaviour
 {
+	private int count=0;
+	public GameObject promp;
 	public GameObject TV;
 	public GameObject Player;
 	private float distance;
@@ -22,6 +27,11 @@ public class MoveLever : MonoBehaviour
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
 		if (distance < interDist)
 		{
+			if (count == 0)
+			{
+				promp.GetComponent<Animator>().enabled = true;
+			}
+			count = 1;
 			if (Input.GetKeyDown(myKey))
 			{
 				anim = GetComponent<Animator>();
@@ -34,6 +44,7 @@ public class MoveLever : MonoBehaviour
 				{
 					leverAudio.Play();
 				}
+				promp.GetComponent<Animator>().enabled = false;
 			}
 		}
 	}

@@ -1559,8 +1559,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1050135489
-  m_SortingLayer: 3
+  m_SortingLayerID: -1603199617
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1219415551, guid: 96a27f07235665f4891b9f170bb2266b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2476,7 +2476,7 @@ MonoBehaviour:
   animator: {fileID: 629945985}
   isGrounded: 0
   checkGroundOffsetY: -1.3
-  checkGroundRadius: 0.3
+  checkGroundRadius: 0.39
 --- !u!70 &629945984
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3182,8 +3182,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278387459
-  m_fontColor: {r: 0.01132071, g: 0.010829434, b: 0.010829434, a: 1}
+    rgba: 197379
+  m_fontColor: {r: 0.01132071, g: 0.010829434, b: 0.010829434, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5750,6 +5750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1713631524}
   - component: {fileID: 1713631523}
+  - component: {fileID: 1713631525}
   m_Layer: 6
   m_Name: X
   m_TagString: Untagged
@@ -5799,7 +5800,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -91907545, guid: 0e8da34ea4ce86646aa86e8e5c464f84, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5825,6 +5826,27 @@ Transform:
   - {fileID: 882946088}
   m_Father: {fileID: 1169002335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1713631525
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713631522}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86448c56024d5b645ab5833ce7a4cc7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1733207062
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,9 +6348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d537db027079f141b7ab94621b35454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promp: {fileID: 1713631522}
   TV: {fileID: 2113622403}
   Player: {fileID: 629945976}
-  interDist: 5
+  interDist: 3
   myKey: 120
 --- !u!82 &1857207136
 AudioSource:
