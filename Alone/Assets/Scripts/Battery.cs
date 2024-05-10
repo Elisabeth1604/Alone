@@ -8,6 +8,11 @@ using UnityEditor.SearchService;
 
 public class Battery : MonoBehaviour
 {
+	public bool flag = false;
+	public GameObject lever;
+	public GameObject lever1;
+	private int count = 0;
+	public GameObject promp;
 	public GameObject Player;
 	public GameObject battery;
 	public GameObject panel;
@@ -19,17 +24,34 @@ public class Battery : MonoBehaviour
 	private Animator anim1;
 	public Sprite newSprite;
 	public string lname;
-	
+	public AudioSource audioSource; 
+	public AudioClip batterySound; 
+
+
 	private void Start()
 	{
 		lname = SceneManager.GetActiveScene().name;
+		audioSource = GetComponent<AudioSource>();
 	}
 	void Update()
 	{
 		distance = Vector3.Distance(Player.GetComponent<Transform>().position, transform.position);
 		if (distance < interDist)
 		{
-			if (Input.GetKeyDown(myKey))
+			
+			if (count == 0)
+			{
+				promp.GetComponent<Animator>().enabled = true;
+			}
+			count = 1;
+			if (lname == "1")
+				lever.GetComponent<Animator>().enabled = false;
+			if (lname == "3")
+			{
+				lever.GetComponent<Animator>().enabled = false;
+				lever1.GetComponent<Animator>().enabled = false;
+			}
+				if (Input.GetKeyDown(myKey))
 			{
 				anim = GetComponent<Animator>();
 				//if(lname=="1")
@@ -63,6 +85,8 @@ public class Battery : MonoBehaviour
 					anim.Play("3battery_get");
 			}
 		}
+		flag = true;
+		audioSource.PlayOneShot(batterySound);
 		yield return new WaitForSeconds((float)1.9);
 		panel.GetComponent<SpriteRenderer>().sprite = newSprite;
 		anim1 =FideIn.GetComponent<Animator>();
