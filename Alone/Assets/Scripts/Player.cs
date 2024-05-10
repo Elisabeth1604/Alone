@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float HorizontalMove = 0f;
     private bool FacingRight = true;
+    private string currentAnimation;
+    private Ladder ladder;
 
     [Header("Player Movement Settings")]
     [Range(0f, 10f)] public float speed = 1f;
@@ -28,8 +30,16 @@ public class Player : MonoBehaviour
 	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
+    //для анимации
+    void ChangeAnimation(string animation)
+    {
+        if (currentAnimation == animation) return;
+        animator.Play(animation);
+        currentAnimation = animation;
+    }
     void Update()
     {
 
@@ -40,24 +50,38 @@ public class Player : MonoBehaviour
 
         HorizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
-        animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
+        //      animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
 
-        if (isGrounded == false)
-        {
-            animator.SetBool("Jumping", true);
-        }
-        else
-        {
-			animator.SetBool("Jumping", false);
-		}
-        if (HorizontalMove < 0 && FacingRight)
-        {
-            Flip();
-        }
-        else if (HorizontalMove > 0 && !FacingRight)
-        {
-            Flip();
-        }
+        //      if (isGrounded == false)
+        //      {
+        //          animator.SetBool("Jumping", true);
+        //      }
+        //      else
+        //      {
+        //	animator.SetBool("Jumping", false);
+        //}
+        //if (HorizontalMove < 0 && FacingRight)
+        //{
+        //    Flip();
+        //}
+        //else if (HorizontalMove > 0 && !FacingRight)
+        //{
+        //    Flip();
+        //}
+
+        //анимация
+        if (HorizontalMove > 0 && isGrounded)
+            ChangeAnimation("run_right");
+        else if (HorizontalMove < 0 && isGrounded)
+            ChangeAnimation("run_left");
+        else if (HorizontalMove > 0 && !isGrounded)
+            ChangeAnimation("jump_right");
+        else if (HorizontalMove < 0 && !isGrounded)
+            ChangeAnimation("jump_left");
+        else if (HorizontalMove == 0 && !isGrounded)
+            ChangeAnimation("jump_static");
+        
+        else ChangeAnimation("idle");
 	}
 
 	private void FixedUpdate()
@@ -68,14 +92,14 @@ public class Player : MonoBehaviour
         CheckGround();
 	}
 
-    private void Flip()
-    {
-        FacingRight = !FacingRight;
+    //private void Flip()
+    //{
+    //    FacingRight = !FacingRight;
 
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
+    //    Vector3 theScale = transform.localScale;
+    //    theScale.x *= -1;
+    //    transform.localScale = theScale;
+    //}
 
     private void CheckGround()
     {
@@ -128,4 +152,6 @@ public class Player : MonoBehaviour
 			this.transform.parent = null;
 		}
 	}
+
+
 }

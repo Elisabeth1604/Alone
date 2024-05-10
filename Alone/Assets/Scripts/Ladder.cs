@@ -46,6 +46,9 @@ public class Ladder : MonoBehaviour
 			other.GetComponent<Rigidbody2D>().gravityScale = 2;
 			isClimbing = false;
 			platf.GetComponent<BoxCollider2D>().enabled = true;
+
+			//смена спрайта
+
 		}
 	}
 	
