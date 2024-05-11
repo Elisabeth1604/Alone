@@ -98,6 +98,11 @@ public class Battery : MonoBehaviour
 		{
 			if (lname == "2")
 				anim1.Play("fade_in2");
+			if (lname == "3")
+			{ 
+				anim1.Play("fade_in3");
+
+			}
 		}
 	}
 	

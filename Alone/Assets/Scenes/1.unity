@@ -4346,6 +4346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe1c1121be43f24da393cafdbaf7319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lname: 1
   BGMusic: {fileID: 6461667568471622546, guid: 883bdb6d32986e04d9074832d204cf2f, type: 3}
   objs11: []
 --- !u!1 &1185303686
@@ -5572,7 +5573,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653052750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

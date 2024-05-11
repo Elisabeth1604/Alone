@@ -11224,7 +11224,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336141544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -12127,7 +12127,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 42.119404, y: -0.047455072}
+  m_Offset: {x: 42.119404, y: -0.45473218}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12138,7 +12138,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8513107, y: 7.0434527}
+  m_Size: {x: 2.8513107, y: 7.858006}
   m_EdgeRadius: 0
 --- !u!114 &1563932807
 MonoBehaviour:
@@ -13001,6 +13001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe1c1121be43f24da393cafdbaf7319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lname: 2
   BGMusic: {fileID: 6461667568471622546, guid: 883bdb6d32986e04d9074832d204cf2f, type: 3}
   objs11: []
 --- !u!4 &1889525908
