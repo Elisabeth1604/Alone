@@ -16,8 +16,8 @@ public class Music_BG : MonoBehaviour
 		{
 			BGMusic = Instantiate(BGMusic);
 			BGMusic.name = "BGMusic";
-			if(lname!="3")
-				DontDestroyOnLoad(BGMusic.gameObject);
+			DontDestroyOnLoad(BGMusic.gameObject);
+			
 		}
 		else
 		{
@@ -28,5 +28,7 @@ public class Music_BG : MonoBehaviour
 	private void Start()
 	{
 		AudioSource = BGMusic.GetComponent<AudioSource>();
+		if (lname == "4")
+			AudioSource.Stop();
 	}
 }
