@@ -16,6 +16,7 @@ public class Lever_platf_3 : MonoBehaviour
 	private Animator anim;
 	private Animator anim1;
 	private AudioSource leverAudio;
+	private bool soundPlayed = false;
 
 	void Start()
 	{
@@ -39,9 +40,10 @@ public class Lever_platf_3 : MonoBehaviour
 				anim.enabled = true;
 				platf.GetComponent<BoxCollider2D>().isTrigger = false;
 				count = 2;
-				if (leverAudio != null && !leverAudio.isPlaying)
+				if (leverAudio != null && !leverAudio.isPlaying && !soundPlayed)
 				{
 					leverAudio.Play();
+					soundPlayed = true;
 				}
 			}
 		}

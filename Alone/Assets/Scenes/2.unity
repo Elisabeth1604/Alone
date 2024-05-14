@@ -11589,7 +11589,7 @@ MonoBehaviour:
   newSprite: {fileID: -247973480, guid: 0e8da34ea4ce86646aa86e8e5c464f84, type: 3}
   lname: 2
   audioSource: {fileID: 1427161859}
-  batterySound: {fileID: 8300000, guid: e68e50a422fe9da4ba80fdf53987186d, type: 3}
+  batterySound: {fileID: 8300000, guid: 61c09dc742f3dca438ff8f835f0b7471, type: 3}
 --- !u!95 &1427161855
 Animator:
   serializedVersion: 5
@@ -11733,7 +11733,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e68e50a422fe9da4ba80fdf53987186d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61c09dc742f3dca438ff8f835f0b7471, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
