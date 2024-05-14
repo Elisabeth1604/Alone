@@ -16,7 +16,6 @@ public class down_box : MonoBehaviour
 		player.GetComponent<Animator>().enabled = true;
 		box.GetComponent<Animator>().enabled = false;
 		player.GetComponent<Renderer>().sortingLayerName = sortingLayerName;
-		fade.GetComponent<Animator>().enabled = true;
 		fade.GetComponent<Animator>().Play("Fade_opening");
 	}
 }
