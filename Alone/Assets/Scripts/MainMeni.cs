@@ -15,7 +15,6 @@ public class MainMeni : MonoBehaviour
     {
 		TimelineManager.SetActive(true); //включили анимацию
         Timeline_is_active = true;
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
     public void QuitGame()
     {
@@ -36,5 +35,9 @@ public class MainMeni : MonoBehaviour
                 TimelineManager.GetComponent<PlayableDirector>().Resume();
             }
 		}
-	}
+        if (TimelineManager.GetComponent<PlayableDirector>().time >= 16f && Timeline_is_active)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }

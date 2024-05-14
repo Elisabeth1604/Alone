@@ -7,6 +7,6 @@ public class LevelTransitions : MonoBehaviour
 {
    public void ChangeScene(int scene)
 	{
-		SceneManager.LoadScene(scene);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 }
