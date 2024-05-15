@@ -11,6 +11,7 @@ public class MainMeni : MonoBehaviour
     public GameObject Quit;
     public GameObject Enter;
     private bool Timeline_is_active = false;
+    private bool once_pause = true;
     public void PlayGame()
     {
 		TimelineManager.SetActive(true); //включили анимацию
@@ -24,16 +25,18 @@ public class MainMeni : MonoBehaviour
 
 	private void Update()
 	{
-        if (TimelineManager.GetComponent<PlayableDirector>().time >= 9.75f && TimelineManager.GetComponent<PlayableDirector>().time <= 9.76f && Timeline_is_active)
+        if (TimelineManager.GetComponent<PlayableDirector>().time >= 9.73f && TimelineManager.GetComponent<PlayableDirector>().time <= 9.76f && Timeline_is_active && once_pause)
 		{
-
+			Debug.Log("Игр");
 			TimelineManager.GetComponent<PlayableDirector>().Pause();
 			Enter.GetComponent<Animator>().enabled = true;
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Enter.SetActive(false);
-                TimelineManager.GetComponent<PlayableDirector>().Resume();
-            }
+			if (Input.GetKeyDown(KeyCode.Return))
+			{
+				once_pause = false;
+				Debug.Log("Игра закрылась");
+				Enter.SetActive(false);
+				TimelineManager.GetComponent<PlayableDirector>().Resume();
+			}
 		}
         if (TimelineManager.GetComponent<PlayableDirector>().time >= 16f && Timeline_is_active)
         {
