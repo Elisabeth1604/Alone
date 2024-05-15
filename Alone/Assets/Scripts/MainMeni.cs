@@ -27,13 +27,12 @@ public class MainMeni : MonoBehaviour
 	{
         if (TimelineManager.GetComponent<PlayableDirector>().time >= 9.73f && TimelineManager.GetComponent<PlayableDirector>().time <= 9.76f && Timeline_is_active && once_pause)
 		{
-			Debug.Log("Игр");
+			
 			TimelineManager.GetComponent<PlayableDirector>().Pause();
 			Enter.GetComponent<Animator>().enabled = true;
 			if (Input.GetKeyDown(KeyCode.Return))
 			{
 				once_pause = false;
-				Debug.Log("Игра закрылась");
 				Enter.SetActive(false);
 				TimelineManager.GetComponent<PlayableDirector>().Resume();
 			}

@@ -1314,7 +1314,7 @@ MonoBehaviour:
   Player: {fileID: 1792665549}
   platf: {fileID: 1159442279}
   lever: {fileID: 448958917}
-  interDist: 10
+  interDist: 9
   myKey: 120
 --- !u!61 &448958920
 BoxCollider2D:
@@ -2410,7 +2410,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.46191597, y: 0.16382778}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2421,7 +2421,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.89, y: 4.01}
+  m_Size: {x: 6.9661674, y: 3.6823447}
   m_EdgeRadius: 0
 --- !u!212 &611773058
 SpriteRenderer:
