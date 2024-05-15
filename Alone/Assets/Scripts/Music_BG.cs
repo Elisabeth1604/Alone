@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Music_BG : MonoBehaviour
 {
@@ -16,8 +17,7 @@ public class Music_BG : MonoBehaviour
 		{
 			BGMusic = Instantiate(BGMusic);
 			BGMusic.name = "BGMusic";
-			DontDestroyOnLoad(BGMusic.gameObject);
-			
+			DontDestroyOnLoad(BGMusic.gameObject);			
 		}
 		else
 		{
@@ -30,5 +30,7 @@ public class Music_BG : MonoBehaviour
 		AudioSource = BGMusic.GetComponent<AudioSource>();
 		if (lname == "4")
 			AudioSource.Stop();
+		if(SceneManager.GetActiveScene().buildIndex==2)
+			AudioSource.Play();
 	}
 }
