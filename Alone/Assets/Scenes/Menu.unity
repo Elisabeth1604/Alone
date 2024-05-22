@@ -289,7 +289,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 3840, y: 2160}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5574,7 +5574,7 @@ GameObject:
   - component: {fileID: 759076922}
   - component: {fileID: 759076923}
   - component: {fileID: 759076924}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Houses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5598,7 +5598,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3840, y: 2160}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &759076922
 CanvasRenderer:
@@ -6726,8 +6726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -512, y: 0}
-  m_SizeDelta: {x: -1024, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1633899429
 Animator:
@@ -6972,7 +6972,7 @@ GameObject:
   - component: {fileID: 1795220765}
   - component: {fileID: 1795220764}
   - component: {fileID: 1795220767}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6987,7 +6987,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795220762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 160}
+  m_LocalPosition: {x: 0, y: 0, z: 27}
   m_LocalScale: {x: 102, y: 102, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6996,7 +6996,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3840, y: 2160}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1795220764
 BoxCollider2D:
@@ -7342,7 +7342,7 @@ GameObject:
   - component: {fileID: 1934417522}
   - component: {fileID: 1934417523}
   - component: {fileID: 1934417524}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7366,7 +7366,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3840, y: 2160}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1934417522
 CanvasRenderer:

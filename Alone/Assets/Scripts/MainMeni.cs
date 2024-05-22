@@ -12,8 +12,10 @@ public class MainMeni : MonoBehaviour
     public GameObject Enter;
     private bool Timeline_is_active = false;
     private bool once_pause = true;
-    public void PlayGame()
+
+	public void PlayGame()
     {
+		//Screen.SetResolution(3840, 2160, true);
 		TimelineManager.SetActive(true); //включили анимацию
         Timeline_is_active = true;
 	}
